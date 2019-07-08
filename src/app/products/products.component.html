@@ -1,0 +1,67 @@
+<div id="mySidebar" class="sidebar">
+    <div >
+        <button class="closeButton"  (click)="closeNav()">close</button>
+    </div>
+    <div style="margin-bottom: 30px">
+        <i class="fa fa-shopping-cart" style="font-size:26px; margin-left: 10px">{{" "}}{{count}}{{" Items"}}</i>
+    </div>
+
+    <div *ngFor="let product of products;let i = index" >
+
+        <div *ngIf="product.count" class="card">
+            <div fxLayout="row" fxLayoutAlign="space-around center" >
+                <div fxLayout="column">
+                    <div fxLayout="row" class="buttonrow">
+                        <button class="button1" (click)="addItem(i)"><img src="./assets/up-arrow.png"></button>
+                    </div>
+                    <div fxLayout="row">
+                        <button class="button1" (click)="deleteItem(i)"><img src="./assets/down-arrow.png"></button>
+                    </div>
+                </div>
+                <div fxLayout="column">
+                    <img src="{{product.src}}" style="height: 50px; width: 50px; padding-left: 10px">
+                </div>
+                <div fxLayout="column" fxFlex="100" class="text">
+
+                    <div class="text">
+                        {{product.name}} <br> {{product.count}}</div>
+                </div>
+                <div fxLayout = "column" >
+                  <a> <button class="button3" (click)="deleteProduct(i)" ><span>x</span></button></a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="main" id="main" fxLayout="column">
+<!--    <div fxFlex="10" fxLayout="row" fxLayoutAlign="end start">-->
+<!--        <button mat-raised-button color="primary" (click)="openSidebar()">Cart</button>-->
+<!--    </div>-->
+
+    <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+
+        <div *ngFor="let product of products; let i = index" fxFlex="19">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title class="mat-card-title">{{product.name}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <img mat-card-image src="{{product.src}}">
+                    <button mat-raised-button (click)="fun(i)" color="primary">
+                        <div *ngIf="product.flag === true; else elseBlock">
+                            {{product.count}} Items Selected
+                        </div>
+                        <ng-template #elseBlock>
+                            Add to cart
+                        </ng-template>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</div>
