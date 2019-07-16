@@ -1,0 +1,17 @@
+.parent{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+.main{
+    display: flex !important;
+}
+.card{
+    width: 400px;
+    height: 500px;
+    border-radius: 10px;
+}
+.logo{
+    height: 100px;
+    width: 50px;
+}

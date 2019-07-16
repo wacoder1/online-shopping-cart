@@ -6,9 +6,9 @@
         <i class="fa fa-shopping-cart" style="font-size:26px; margin-left: 10px">{{" "}}{{count}}{{" Items"}}</i>
     </div>
 
-    <div *ngFor="let product of products;let i = index" >
+    <div *ngFor="let item of cart;let i = index" >
 
-        <div *ngIf="product.count" class="card">
+        <div *ngIf="item.count" class="card">
             <div fxLayout="row" fxLayoutAlign="space-around center" >
                 <div fxLayout="column">
                     <div fxLayout="row" class="buttonrow">
@@ -19,12 +19,12 @@
                     </div>
                 </div>
                 <div fxLayout="column">
-                    <img src="{{product.src}}" style="height: 50px; width: 50px; padding-left: 10px">
+                    <img src="{{products[i].src}}" style="height: 50px; width: 50px; padding-left: 10px">
                 </div>
                 <div fxLayout="column" fxFlex="100" class="text">
 
                     <div class="text">
-                        {{product.name}} <br> {{product.count}}</div>
+                        {{products[i].name}} <br> {{item.count}}</div>
                 </div>
                 <div fxLayout = "column" >
                   <a> <button class="button3" (click)="deleteProduct(i)" ><span>x</span></button></a>
@@ -37,11 +37,16 @@
     </div>
 </div>
 
-<div class="main" id="main" fxLayout="column">
+<div class="main" id="main" fxLayout="column" fxLayoutGap="20px">
 <!--    <div fxFlex="10" fxLayout="row" fxLayoutAlign="end start">-->
 <!--        <button mat-raised-button color="primary" (click)="openSidebar()">Cart</button>-->
 <!--    </div>-->
-
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top> </div>
+    <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
+        <div fxFlex="20">
+            <button mat-raised-button color="primary" routerLink="/addProducts">Add products to the list</button>
+        </div>
+    </div>
     <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
 
         <div *ngFor="let product of products; let i = index" fxFlex="19">
@@ -52,12 +57,7 @@
                 <mat-card-content>
                     <img mat-card-image src="{{product.src}}">
                     <button mat-raised-button (click)="fun(i)" color="primary">
-                        <div *ngIf="product.flag === true; else elseBlock">
-                            {{product.count}} Items Selected
-                        </div>
-                        <ng-template #elseBlock>
                             Add to cart
-                        </ng-template>
                     </button>
                 </mat-card-content>
             </mat-card>

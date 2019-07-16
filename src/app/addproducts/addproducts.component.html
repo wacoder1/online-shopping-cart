@@ -1,0 +1,41 @@
+<div class="parent" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" [class.mat-elevation-z8]="true">
+        <form [formGroup]="addItem">
+
+            <mat-card class="card">
+                <div fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <h1>Online Shop</h1>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <img src="./assets/logo.png">
+                    </div>
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field appearance="outline" fxFlex="100">
+                            <mat-label>Product Name</mat-label>
+                            <input matInput formControlName="ProductName">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field appearance="outline" fxFlex="100">
+                            <mat-label>Number of Items of this product</mat-label>
+                            <input matInput formControlName="Count">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field appearance="outline" fxFlex="100">
+                            <mat-label>image source</mat-label>
+                            <input matInput formControlName="ImageSource">
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="end center">
+                        <button mat-raised-button color="primary" (click)="addProduct()" >Login</button>
+                    </div>
+
+                </div>
+            </mat-card>
+        </form>
+    </div>
+</div>
+

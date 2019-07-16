@@ -13,12 +13,17 @@ import { CartComponent } from './cart/cart.component';
 import {MatCardModule} from '@angular/material/card';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientModule} from '@angular/common/http';
+import {LoginModule} from './login/login.module';
+import {TopModule} from './top/top.module';
+import { AddproductsComponent } from './addproducts/addproducts.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    CartComponent
+    CartComponent,
+    AddproductsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +37,9 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     MatCardModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    LoginModule,
+    TopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

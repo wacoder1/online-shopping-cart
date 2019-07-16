@@ -3,4 +3,5 @@ export class Products {
     id: number;
     src: string;
     flag: boolean;
+    count: number;
 }
