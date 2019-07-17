@@ -12,10 +12,10 @@
             <div fxLayout="row">
                 <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard </button>
             </div><div fxLayout="row">
-                <button mat-raised-button color="primary" routerLink="/products">Product </button>
-            </div><div fxLayout="row">
-                <button mat-raised-button color="primary" routerLink="/cart">My Cart </button>
-            </div>
+            <button mat-raised-button color="primary" routerLink="/products">Product </button>
+        </div><div fxLayout="row">
+            <button mat-raised-button color="primary" routerLink="/cart">My Cart </button>
+        </div>
         </div>
 
     </mat-drawer>
@@ -59,14 +59,28 @@
     </div>
 
     <div class="main" id="main" fxLayout="column" fxLayoutGap="20px">
-
+        <!--    <div fxFlex="10" fxLayout="row" fxLayoutAlign="end start">-->
+        <!--        <button mat-raised-button color="primary" (click)="openSidebar()">Cart</button>-->
+        <!--    </div>-->
         <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top> </div>
-        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
-            <div fxFlex="20">
-                <button mat-raised-button color="primary" routerLink="/addProducts">Add products to the list</button>
-            </div>
-        </div>
 
+        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+
+            <div *ngFor="let product of products; let i = index" fxFlex="19">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-title class="mat-card-title">{{product.name}}</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <img mat-card-image src="{{product.src}}">
+                        <button mat-raised-button (click)="fun(i)" color="primary">
+                            Add to cart
+                        </button>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+
+        </div>
     </div>
 </mat-drawer-container>
 

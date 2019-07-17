@@ -1,0 +1,100 @@
+.main{
+    display: flex;
+    margin: 40px;
+}
+.mat-card{
+    height: 380px;
+}
+.mat-card-image{
+    height: 250px;
+}
+.mat-card-header{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.mat-card-title{
+    text-align: center;
+}
+.mat-raised-button{
+    width: 100%;
+}
+.sidebar {
+    height: 100%;
+    background-color: #ffffff;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 40px;
+
+    box-shadow: 5px 10px #888888;
+}
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    font-size: 12px;
+    background-color: #3A4ABB;
+    color: white;
+    border-radius: 4px;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.card {
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    background-color: #ffffff;
+    padding: 5px;
+}
+.text {
+    text-align: center;
+
+}
+.button2 {
+    background-color: transparent !important;
+    border: none;
+    color: #888888;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.button3 {
+    background-color: transparent !important;
+    border: none;
+    color: #888888;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+button:hover span {
+    color: red;
+
+}
+.button1 {
+    background: transparent !important;
+    border: transparent !important;
+
+}

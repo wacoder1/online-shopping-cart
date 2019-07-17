@@ -1,12 +1,12 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {CommonServiceService} from '../common-service.service';
 
 @Component({
-    selector: 'app-products',
-    templateUrl: './products.component.html',
-    styleUrls: ['./products.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class ProductsComponent implements OnInit {
+export class DashboardComponent implements OnInit {
     count = 0;
     sideFlag = false;
     // product: Products;
@@ -18,14 +18,14 @@ export class ProductsComponent implements OnInit {
         { id: 2, count: 0, name: 'Iphone Xs', src: './assets/Xs.jpeg', psc: 'Xs', category: 'A', price: 1000, description: 'abc', isbest: 'No', date: 1, origin: 'USA' },
         { id: 3, count: 0, name: 'Galaxy 10s plus', src: './assets/s10plus.jpg', psc: 's10plus', category: 'A', price: 800, description: 'abc', isbest: 'No', date: 1, origin: 'USA' },
         { id: 4, count: 0, name: 'Huawei P30 Pro', src: './assets/p30pro.jpg', psc: 'p30pro', category: 'A', price: 800, description: 'abc', isbest: 'No', date: 1, origin: 'USA' }
-        ];
+    ];
     cart = [
         { id: 0, count: 0 },
         { id: 1, count: 0 },
         { id: 2, count: 0 },
         { id: 3, count: 0 },
         { id: 4, count: 0 }
-        ];
+    ];
     constructor(private _commonService: CommonServiceService) {
     }
 
