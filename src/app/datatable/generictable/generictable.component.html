@@ -1,0 +1,36 @@
+
+
+<div class="custom" >
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+        <div *ngFor="let index of controlTitle" >
+            <ng-container matColumnDef="{{index.control}}">
+                <th mat-header-cell *matHeaderCellDef> {{index.title}} </th>
+                <td mat-cell *matCellDef="let element; let i = index">
+                    <div fxLayout="row">
+                        <div fxLayout="column">{{element[index.control]}}</div>
+<!--                        <div fxLayout="column" *ngIf="index.control === 'pSolverDetails' ">-->
+<!--                            <button mat-raised-button [routerLink]="['edit',i]" >edit</button>-->
+<!--                            <button mat-raised-button (click)="deleteFn(i)">delete</button>-->
+
+<!--                        </div>-->
+                    </div>
+
+
+
+                </td>
+
+            </ng-container>
+
+        </div>
+
+        <tr mat-header-row *matHeaderRowDef="columnTitle"></tr>
+        <tr mat-row *matRowDef="let row; columns: columnTitle;"></tr>
+
+    </table>
+</div>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+
+
+
+

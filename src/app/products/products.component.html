@@ -17,7 +17,6 @@
                 <button mat-raised-button color="primary" routerLink="/cart">My Cart </button>
             </div>
         </div>
-
     </mat-drawer>
     <div id="mySidebar" class="sidebar">
         <div >
@@ -60,10 +59,15 @@
 
     <div class="main" id="main" fxLayout="column" fxLayoutGap="20px">
 
-        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top> </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top></div>
         <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
             <div fxFlex="20">
                 <button mat-raised-button color="primary" routerLink="/addProducts">Add products to the list</button>
+            </div>
+        </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
+            <div  fxFlex="100" *ngIf="showDatatable" >
+                <app-generictable [dlfn]="delfn" [controlTitle]="controlTitle"  [arr]="arr" [columnTitle]="columnTitle" ></app-generictable>
             </div>
         </div>
 
