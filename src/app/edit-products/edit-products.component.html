@@ -1,0 +1,95 @@
+<div class="parent" fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" [class.mat-elevation-z8]="true">
+        <form [formGroup]="addItem">
+            <mat-card class="card">
+                <div fxLayout="column">
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <h1>Online Shop</h1>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="center">
+                        <img src="./assets/logo.png">
+                    </div>
+
+                    <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Product Name</mat-label>
+                                <input matInput formControlName="ProductName">
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>Product Short Code</mat-label>
+                                <input matInput formControlName="ProductShortCode">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Category</mat-label>
+                                <mat-select formControlName="Category">
+                                    <div *ngFor="let category of CategoryList">
+                                        <mat-option value="category">{{category}}</mat-option>
+                                    </div>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Price</mat-label>
+                                <input matInput formControlName="Price">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field fxFlex="100" appearance="outline">
+                            <mat-label>
+                                Description
+                            </mat-label>
+                            <input matInput formControlName="Description">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field appearance="outline" fxFlex="100">
+                            <mat-label>Image Url</mat-label>
+                            <input matInput formControlName="ImageSource">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxFlex="100" fxLayoutGap="20px">
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline" fxFlex="100">
+                                <mat-label>IsBestAchieved</mat-label>
+                                <mat-select formControlName="IsBestAchieved">
+                                    <mat-option value="Yes">Yes</mat-option>
+                                    <mat-option value="No">No</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div fxLayout="column" fxFlex="50">
+                            <mat-form-field appearance="outline">
+                                <input matInput formControlName="CreatedDate" [matDatepicker]="picker" placeholder="Choose a date">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div fxLayout="row" fxFlex="100">
+                        <mat-form-field appearance="outline" fxFlex="100">
+                            <mat-label>Number of Items of this product</mat-label>
+                            <input matInput formControlName="Count">
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="end center">
+                        <button mat-raised-button color="primary" (click)="addProduct()" routerLink="/dashboard">ADD</button>
+                    </div>
+                </div>
+            </mat-card>
+        </form>
+    </div>
+</div>
+

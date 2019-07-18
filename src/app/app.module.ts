@@ -21,6 +21,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {DatatableModule} from './datatable/datatable.module';
+import { EditProductsComponent } from './edit-products/edit-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import {DatatableModule} from './datatable/datatable.module';
     CartComponent,
     AddproductsComponent,
     DashboardComponent,
+    EditProductsComponent,
   ],
   imports: [
     BrowserModule,
