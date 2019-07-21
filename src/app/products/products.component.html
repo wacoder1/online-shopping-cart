@@ -18,44 +18,44 @@
             </div>
         </div>
     </mat-drawer>
-    <div id="mySidebar" class="sidebar">
-        <div >
-            <button class="closeButton"  (click)="closeNav()">close</button>
-        </div>
-        <div style="margin-bottom: 30px">
-            <i class="fa fa-shopping-cart" style="font-size:26px; margin-left: 10px">{{" "}}{{count}}{{" Items"}}</i>
-        </div>
+<!--    <div id="mySidebar" class="sidebar">-->
+<!--        <div >-->
+<!--            <button class="closeButton"  (click)="closeNav()">close</button>-->
+<!--        </div>-->
+<!--        <div style="margin-bottom: 30px">-->
+<!--            <i class="fa fa-shopping-cart" style="font-size:26px; margin-left: 10px">{{" "}}{{count}}{{" Items"}}</i>-->
+<!--        </div>-->
 
-        <div *ngFor="let item of cart;let i = index" >
+<!--        <div *ngFor="let item of cart;let i = index" >-->
 
-            <div *ngIf="item.count" class="card">
-                <div fxLayout="row" fxLayoutAlign="space-around center" >
-                    <div fxLayout="column">
-                        <div fxLayout="row" class="buttonrow">
-                            <button class="button1" (click)="addItem(i)"><img src="./assets/up-arrow.png"></button>
-                        </div>
-                        <div fxLayout="row">
-                            <button class="button1" (click)="deleteItem(i)"><img src="./assets/down-arrow.png"></button>
-                        </div>
-                    </div>
-                    <div fxLayout="column">
-                        <img src="{{products[i].src}}" style="height: 50px; width: 50px; padding-left: 10px">
-                    </div>
-                    <div fxLayout="column" fxFlex="100" class="text">
+<!--            <div *ngIf="item.count" class="card">-->
+<!--                <div fxLayout="row" fxLayoutAlign="space-around center" >-->
+<!--                    <div fxLayout="column">-->
+<!--                        <div fxLayout="row" class="buttonrow">-->
+<!--                            <button class="button1" (click)="addItem(i)"><img src="./assets/up-arrow.png"></button>-->
+<!--                        </div>-->
+<!--                        <div fxLayout="row">-->
+<!--                            <button class="button1" (click)="deleteItem(i)"><img src="./assets/down-arrow.png"></button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div fxLayout="column">-->
+<!--                        <img src="{{products[i].src}}" style="height: 50px; width: 50px; padding-left: 10px">-->
+<!--                    </div>-->
+<!--                    <div fxLayout="column" fxFlex="100" class="text">-->
 
-                        <div class="text">
-                            {{products[i].name}} <br> {{item.count}}</div>
-                    </div>
-                    <div fxLayout = "column" >
-                        <a> <button class="button3" (click)="deleteProduct(i)" ><span>x</span></button></a>
-                    </div>
-                </div>
+<!--                        <div class="text">-->
+<!--                            {{products[i].name}} <br> {{item.count}}</div>-->
+<!--                    </div>-->
+<!--                    <div fxLayout = "column" >-->
+<!--                        <a> <button class="button3" (click)="deleteProduct(i)" ><span>x</span></button></a>-->
+<!--                    </div>-->
+<!--                </div>-->
 
 
-            </div>
+<!--            </div>-->
 
-        </div>
-    </div>
+<!--        </div>-->
+<!--    </div>-->
 
     <div class="main" id="main" fxLayout="column" fxLayoutGap="20px">
 

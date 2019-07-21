@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Products} from '../classes/products';
+import {Cart} from '../classes/cart';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {Products} from '../classes/products';
 export class AddproductsComponent implements OnInit {
 
     localArray;
+    cartArray;
     addItem = new FormGroup({
         ProductName: new FormControl('', [Validators.required]),
         ProductShortCode: new FormControl('', Validators.required),
@@ -22,7 +24,7 @@ export class AddproductsComponent implements OnInit {
         CreatedDate: new FormControl(''),
         Origin: new FormControl('', Validators.required),
         Id: new FormControl(''),
-        Count: new FormControl(''),
+        Count: new FormControl(0),
         });
     CategoryList = ['A', 'B', 'C', 'D'];
     constructor() {
@@ -30,6 +32,8 @@ export class AddproductsComponent implements OnInit {
 
     ngOnInit() {
         this.localArray = JSON.parse(localStorage.getItem('products'));
+        this.cartArray = JSON.parse(localStorage.getItem('cart'));
+        console.log(this.cartArray);
         const length = this.localArray.length;
         this.addItem.controls.Id.setValue(length);
     }
@@ -48,8 +52,15 @@ export class AddproductsComponent implements OnInit {
         tempForm.isbest = this.addItem.value.IsBestAchieved;
         console.log(this.addItem);
         this.localArray.push(tempForm);
+        const tempCart = new Cart();
+        tempCart.id = this.addItem.value.Id;
+        tempCart.count = this.addItem.value.Count;
+        debugger;
+        this.cartArray.push(tempCart);
+
         console.log(this.localArray);
         localStorage.setItem('products', JSON.stringify(this.localArray));
+        localStorage.setItem('cart', JSON.stringify(this.cartArray));
     }
 
 }

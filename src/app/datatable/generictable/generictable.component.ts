@@ -9,7 +9,7 @@ import {MatPaginator, MatTableDataSource} from '@angular/material';
 export class GenerictableComponent implements OnInit {
 
     @Input() controlTitle;
-    @Input() arr: string[] ;
+    @Input() arr: string[];
     @Input() columnTitle: string[] ;
     @Input() dlfn: any ;
 

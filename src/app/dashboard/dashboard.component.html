@@ -62,9 +62,9 @@
         <!--    <div fxFlex="10" fxLayout="row" fxLayoutAlign="end start">-->
         <!--        <button mat-raised-button color="primary" (click)="openSidebar()">Cart</button>-->
         <!--    </div>-->
-        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top> </div>
+        <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center"><app-app-top></app-app-top></div>
 
-        <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+        <div fxFlex="100" fxLayout="row wrap" fxLayoutAlign="space-between center">
 
             <div *ngFor="let product of products; let i = index" fxFlex="19">
                 <mat-card>
@@ -74,7 +74,11 @@
                     <mat-card-content>
                         <img mat-card-image src="{{product.src}}">
                         <button mat-raised-button (click)="fun(i)" color="primary">
-                            Add to cart
+                            <div (mouseover)="product.changeText = true" (mouseout)="product.changeText = false">
+                                <p [hidden]="product.changeText">Add to Cart</p>
+                                <p [hidden]="!product.changeText">${{product.price}}</p>
+                            </div>
+
                         </button>
                     </mat-card-content>
                 </mat-card>

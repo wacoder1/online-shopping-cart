@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
     // tempCart: Cart;
     // tempProduct: Products;
     products = [
-        { id: 0, count: 0, name: 'Google Pixel 3XL', src: './assets/pixel_3a_xl.jpg', psc: 'GP3a', category: 'A', price: 400, description: 'abc', isbest: 'No', date: 1, origin: 'USA' },
+        { id: 0, count: 0, name: 'Google Pixel 3XL', src: './assets/pixel_3a_xl.jpg', psc: 'GP3a', category: 'A', price: 400, description: 'abc', isbest: 'No', date: 1, origin: 'USA', changeText: true },
         { id: 1, count: 0, name: 'OnePlus 7Pro', src: './assets/7_pro.jpg', psc: 'OP7pro', category: 'A', price: 700, description: 'abc', isbest: 'Yes', date: 1, origin: 'USA'},
         { id: 2, count: 0, name: 'Iphone Xs', src: './assets/Xs.jpeg', psc: 'Xs', category: 'A', price: 1000, description: 'abc', isbest: 'No', date: 1, origin: 'USA' },
         { id: 3, count: 0, name: 'Galaxy 10s plus', src: './assets/s10plus.jpg', psc: 's10plus', category: 'A', price: 800, description: 'abc', isbest: 'No', date: 1, origin: 'USA' },
@@ -82,6 +82,7 @@ export class DashboardComponent implements OnInit {
         }
         localStorage.setItem('products', JSON.stringify(this.products));
         localStorage.setItem('cart', JSON.stringify(this.cart));
+
 
         // const objCart = new Cart();
         // objCart.id = i;

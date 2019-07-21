@@ -8,11 +8,20 @@ import { Component, OnInit } from '@angular/core';
 export class CartComponent implements OnInit {
 
   products: any = [];
+  cartArray;
   constructor() { }
 
   ngOnInit() {
     this.products = JSON.parse(localStorage.getItem('products'));
-    console.log(this.products);
+    this.cartArray = JSON.parse(localStorage.getItem('cart'));
+    console.log(this.cartArray);
   }
 
+    add(i: number) {
+        
+    }
+
+    delete(i: number) {
+        
+    }
 }
