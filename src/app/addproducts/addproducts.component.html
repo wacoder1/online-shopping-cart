@@ -1,3 +1,10 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayoutGap="20px">
+        <span routerLink="/dashboard">Dashboard</span>
+        <span routerLink="/products">Products</span>
+        <span routerLink="/cart">Cart</span>
+    </mat-toolbar-row>
+</mat-toolbar>
 <div class="parent" fxLayout="column" fxLayoutAlign="center center">
     <div fxLayout="row" [class.mat-elevation-z8]="true">
         <form [formGroup]="addItem">
@@ -14,13 +21,13 @@
                         <div fxLayout="column" fxFlex="50">
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Product Name</mat-label>
-                                <input matInput formControlName="ProductName">
+                                <input matInput formControlName="ProductName" required>
                             </mat-form-field>
                         </div>
                         <div fxLayout="column" fxFlex="50">
                             <mat-form-field appearance="outline" fxFlex="100">
                                 <mat-label>Product Short Code</mat-label>
-                                <input matInput formControlName="ProductShortCode">
+                                <input matInput formControlName="ProductShortCode" required>
                             </mat-form-field>
                         </div>
                     </div>
@@ -38,7 +45,7 @@
                         <div fxLayout="column" fxFlex="50">
                             <mat-form-field appearance="outline">
                                 <mat-label>Price</mat-label>
-                                <input matInput formControlName="Price">
+                                <input matInput formControlName="Price" required>
                             </mat-form-field>
                         </div>
                     </div>
@@ -48,7 +55,7 @@
                             <mat-label>
                                 Description
                             </mat-label>
-                            <input matInput formControlName="Description">
+                            <input matInput formControlName="Description" required>
                         </mat-form-field>
                     </div>
 
@@ -80,16 +87,17 @@
                     <div fxLayout="row" fxFlex="100">
                         <mat-form-field appearance="outline" fxFlex="100">
                             <mat-label>Origin</mat-label>
-                            <input matInput formControlName="Origin">
+                            <input matInput formControlName="Origin" required>
                         </mat-form-field>
                     </div>
 
                     <div fxLayout="row" fxLayoutAlign="end center">
-                        <button mat-raised-button color="primary" (click)="addProduct()" routerLink="/dashboard">ADD</button>
+                        <button mat-raised-button color="primary" (click)="addProduct()" [disabled]="addItem.invalid" routerLink="/dashboard">ADD</button>
                     </div>
                 </div>
             </mat-card>
         </form>
     </div>
+
 </div>
 

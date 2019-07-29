@@ -1,11 +1,15 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="20px">
         <button color="primary" (click)="drawer.toggle()"><i class="material-icons">
             dehaze
         </i></button>
+
+        <span routerLink="/dashboard">Dashboard</span>
+
+        <span routerLink="/products">Products</span>
+        <span routerLink="/cart">Cart</span>
     </mat-toolbar-row>
 </mat-toolbar>
-
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <div fxLayout="column" fxLayoutGap="10" style="width: 160px">
@@ -67,7 +71,7 @@
         </div>
         <div fxLayout="row" fxFlex="100" fxLayoutAlign="center center">
             <div  fxFlex="100" *ngIf="showDatatable" >
-                <app-generictable [dlfn]="delfn" [controlTitle]="controlTitle"  [arr]="arr" [columnTitle]="columnTitle" ></app-generictable>
+                <app-generictable (dlfn)="delete($event)" [controlTitle]="controlTitle"  [arr]="arr" [columnTitle]="columnTitle" ></app-generictable>
             </div>
         </div>
 

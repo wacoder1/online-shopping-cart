@@ -1,38 +1,65 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="20px">
         <button color="primary" (click)="drawer.toggle()"><i class="material-icons">
             dehaze
         </i></button>
+
+        <span routerLink="/dashboard">Dashboard</span>
+
+        <span routerLink="/products">Products</span>
+        <span routerLink="/cart">Cart</span>
     </mat-toolbar-row>
 </mat-toolbar>
-
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <div fxLayout="column" fxLayoutGap="10" style="width: 160px">
             <div fxLayout="row">
-                <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard</button>
-            </div>
-            <div fxLayout="row">
-                <button mat-raised-button color="primary" routerLink="/products">Product</button>
-            </div>
-            <div fxLayout="row">
-                <button mat-raised-button color="primary" routerLink="/cart">My Cart</button>
-            </div>
+                <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard </button>
+            </div><div fxLayout="row">
+            <button mat-raised-button color="primary" routerLink="/products">Product </button>
+        </div><div fxLayout="row">
+            <button mat-raised-button color="primary" routerLink="/cart">My Cart </button>
         </div>
-
+        </div>
     </mat-drawer>
-    <div fxLayout="column" fxFlex="100" fxLayoutAlign="center center">
-        <div fxLayout="row" fxFlex="100" *ngFor="let cartIndex of cartArray; let i = index" [class.mat-elevation-z8]="true" fxLayoutAlign="space-around center">
-            <mat-card *ngIf="cartIndex.count" fxLayout="row" fxFlex="100" fxLayoutAlign="space-around center" fxLayoutGap="30px">
-                <div fxLayout="column"><img class="img" src="{{products[cartIndex.id].src}}"></div>
-                <div fxLayout="column">
-                    <button mat-raised-button (click)="delete(i)" fxLayout="column">-</button>
-                    <span fxLayout="column">{{products[cartIndex.id].count}}</span>
-                    <button mat-raised-button (click)="add(i)" fxLayout="column">+</button>
-                </div>
-                <div fxLayout="column">{{products[cartIndex.id].name}}</div>
-                <div fxLayout="column">${{products[cartIndex.id].price}}</div>
-            </mat-card>
-        </div>
+    <div fxFlex="100" fxLayoutAlign="center center" class="main" id="main">
+        <mat-card fxLayout="column" fxFlex="100">
+            <div fxLayout="row" fxFlex="100" *ngFor="let cartIndex of cartArray; let i = index"
+                 [class.mat-elevation-z8]="true" fxLayoutAlign="space-around center">
+                <mat-card class="mat-card-gap" *ngIf="cartIndex.count" fxLayout="row" fxFlex="100"
+                          fxLayoutAlign="space-around center" fxLayoutGap="30px">
+                    <div fxLayout="column"><img class="img" src="{{products[cartIndex.id].src}}"></div>
+                    <div fxLayout="column">
+                        <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="10px">
+                            <div fxLayout="column">
+                                <button mat-raised-button (click)="delete(i)" color="primary">-</button>
+                            </div>
+                            <div fxLayout="column"><span>{{products[cartIndex.id].count}}</span></div>
+                            <div fxLayout="column">
+                                <button mat-raised-button (click)="add(i)" color="primary">+</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div fxLayout="column">{{products[cartIndex.id].name}}</div>
+                    <div fxLayout="column">${{products[cartIndex.id].price}}</div>
+                </mat-card>
+            </div>
+
+        </mat-card>
     </div>
+    <!--        <div fxLayout="row" fxFlex="100" *ngFor="let cartIndex of cartArray; let i = index" [class.mat-elevation-z8]="true" fxLayoutAlign="space-around center">-->
+    <!--            <mat-card *ngIf="cartIndex.count" fxLayout="row" fxFlex="100" fxLayoutAlign="space-around center" fxLayoutGap="30px">-->
+    <!--                <div fxLayout="column"><img class="img" src="{{products[cartIndex.id].src}}"></div>-->
+    <!--                <div fxLayout="column">-->
+    <!--                    <button mat-raised-button (click)="delete(i)" fxLayout="column">-</button>-->
+    <!--                    <span fxLayout="column">{{products[cartIndex.id].count}}</span>-->
+    <!--                    <button mat-raised-button (click)="add(i)" fxLayout="column">+</button>-->
+    <!--                </div>-->
+    <!--                <div fxLayout="column">{{products[cartIndex.id].name}}</div>-->
+    <!--                <div fxLayout="column">${{products[cartIndex.id].price}}</div>-->
+    <!--            </mat-card>-->
+    <!--        </div>-->
+    <!--    </div>-->
 </mat-drawer-container>

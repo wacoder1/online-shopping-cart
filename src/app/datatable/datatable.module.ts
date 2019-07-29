@@ -6,6 +6,7 @@ import {MatTableModule} from '@angular/material/table';
 import {RouterModule} from '@angular/router';
 import {MatButtonModule} from '@angular/material';
 import {FlexModule} from '@angular/flex-layout';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
     declarations: [GenerictableComponent],
@@ -18,7 +19,8 @@ import {FlexModule} from '@angular/flex-layout';
         MatPaginatorModule,
         RouterModule,
         FlexModule,
-        MatButtonModule
+        MatButtonModule,
+        MatSortModule
     ]
 })
 export class DatatableModule { }

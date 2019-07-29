@@ -1,7 +1,7 @@
 
 
 <div class="custom" >
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" >
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
         <div *ngFor="let index of controlTitle" >
             <ng-container matColumnDef="{{index.control}}">
                 <th mat-header-cell *matHeaderCellDef> {{index.title}} </th>
@@ -10,7 +10,7 @@
                         <div fxLayout="column">{{element[index.control]}}</div>
                         <div fxLayout="column" *ngIf="index.control === 'option' ">
                             <button mat-raised-button [routerLink]="['/edit',element.id]">edit</button>
-                            <button mat-raised-button (click)="dlfn(element.id)">delete</button>
+                            <button mat-raised-button (click)="dlfn.emit(element.id)">delete</button>
                         </div>
                     </div>
                 </td>
@@ -25,7 +25,7 @@
     </table>
 </div>
 
-<mat-paginator [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true"></mat-paginator>
+<mat-paginator [pageSizeOptions]="[10, 15, 20]" [showFirstLastButtons]="true"></mat-paginator>
 
 
 

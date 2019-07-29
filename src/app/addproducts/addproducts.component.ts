@@ -55,7 +55,6 @@ export class AddproductsComponent implements OnInit {
         const tempCart = new Cart();
         tempCart.id = this.addItem.value.Id;
         tempCart.count = this.addItem.value.Count;
-        debugger;
         this.cartArray.push(tempCart);
 
         console.log(this.localArray);

@@ -18,10 +18,18 @@ export class CartComponent implements OnInit {
   }
 
     add(i: number) {
-        
+        this.cartArray[i].count++;
+        this.products[i].count++;
+        localStorage.setItem('products', JSON.stringify(this.products));
+        localStorage.setItem('cart', JSON.stringify(this.cartArray));
     }
 
     delete(i: number) {
-        
+        if (this.cartArray[i].count > 0) {
+            this.cartArray[i].count--;
+            this.products[i].count--;
+        }
+        localStorage.setItem('products', JSON.stringify(this.products));
+        localStorage.setItem('cart', JSON.stringify(this.cartArray));
     }
 }

@@ -1,15 +1,20 @@
 <mat-toolbar color="primary">
-    <mat-toolbar-row>
+    <mat-toolbar-row fxLayoutGap="20px">
         <button color="primary" (click)="drawer.toggle()"><i class="material-icons">
             dehaze
         </i></button>
+
+        <span routerLink="/dashboard">Dashboard</span>
+
+        <span routerLink="/products">Products</span>
+        <span routerLink="/cart">Cart</span>
     </mat-toolbar-row>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side">
         <div fxLayout="column" fxLayoutGap="10" style="width: 160px">
-            <div fxLayout="row">
+            <div fxLayout="row" fxFlex="100">
                 <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard </button>
             </div><div fxLayout="row">
             <button mat-raised-button color="primary" routerLink="/products">Product </button>

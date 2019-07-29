@@ -31,7 +31,7 @@ export class SinginComponent implements OnInit {
                 this.personLogin = data;
                 console.log(this.personLogin);
                 if (this.personLogin.length > 0) {
-                    this.router.navigate(['products']);
+                    this.router.navigate(['dashboard']);
                 }
             });
     }

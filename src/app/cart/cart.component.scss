@@ -1,4 +1,18 @@
+.main{
+    display: flex;
+    margin: 40px;
+}
 .img{
     height: 100px;
     width: 100px;
+}
+.mat-card-gap{
+    margin-bottom: 20px;
+}
+.mat-raised-button{
+    width: 100%!important;
+}
+span:hover{
+    background: skyblue;
+    cursor: pointer;
 }
